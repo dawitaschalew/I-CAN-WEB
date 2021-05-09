@@ -1,0 +1,30 @@
+html {
+    height: 100vh;
+    width: 100vw;
+    // This defines what 1rem is
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+
+    @include respond(tab-port) {
+    }
+    @include respond(tab-land) {
+    }
+    @include respond(desktop) {
+    }
+    @include respond(big-screen) {
+    }
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
