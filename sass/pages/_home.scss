@@ -1,3 +1,464 @@
 .home {
-  
+  height: 100%;
+  width: 100%;
+
+  &__content {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__container {
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    align-items: center;
+  }
+
+  &__heading {
+    height: 70vh;
+    width: 100%;
+
+    // border: 1px solid red;
+
+    padding-top: 6.4rem;
+    @include respond(tab-land) {
+      height: 100vh;
+      padding-top: 8rem;
+    }
+
+    &__content {
+      height: 100%;
+      width: 100%;
+    }
+
+    &__container {
+      height: 100%;
+      width: 100vw;
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      &--leading {
+        // display: none;
+      }
+      &--main {
+        height: 100%;
+        width: 80%;
+        margin: 0 auto;
+
+        // border: 1px solid red;
+
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+
+        & > *:first-child {
+          height: 100%;
+          display: flex;
+          flex-direction: column-reverse;
+          align-items: center;
+          justify-content: center;
+
+          color: $color-main;
+
+          @include respond(tab-land) {
+            width: 40vw;
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
+          & > *:first-child {
+            font-size: 1.6rem;
+            margin-top: 4rem;
+          }
+
+          & > *:last-child {
+            font-size: 2.4rem;
+            text-align: center;
+
+            @include respond(tab-land) {
+              font-size: 3.4rem;
+              text-align: start;
+              margin-top: 2.4rem;
+            }
+          }
+        }
+
+        & > *:last-child {
+          height: 100%;
+          width: 50vw;
+          display: flex;
+          align-content: center;
+          justify-content: center;
+          height: 50vh;
+
+          & > div {
+            height: 50vh;
+            border: 1px solid green;
+
+            & img {
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+          display: none;
+          @include respond(tab-land) {
+            display: flex;
+          }
+        }
+      }
+      &--actions {
+        width: 110vw;
+
+        & > div {
+          height: 4rem;
+
+          @include respond(tab-land) {
+            height: 6.3rem;
+          }
+          width: 100%;
+          & img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+
+  &__about {
+    height: 100vh;
+    width: 100%;
+
+    // border: 1px solid red;
+
+    @include respond(tab-land) {
+      height: 100vh;
+    }
+
+    &__content {
+      height: 100%;
+      width: 100%;
+    }
+
+    &__container {
+      height: 100%;
+      width: 100vw;
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      &--leading {
+        padding: 4rem 0;
+        width: 90vw;
+        max-width: 64rem;
+
+        margin: 0 auto;
+
+        display: grid;
+        grid-template-rows: auto 1fr;
+        align-items: center;
+        justify-items: center;
+        row-gap: 4rem;
+
+        font-size: 2.4rem;
+        color: $color-main;
+
+        @include respond(tab-land) {
+          padding-top: 8rem;
+          font-size: 3rem;
+          row-gap: 5.6rem;
+        }
+      }
+
+      &--main {
+        height: 100%;
+        width: 70vw;
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 1.8rem;
+        color: $color-main;
+      }
+    }
+  }
+
+  &__contact {
+    height: 100vh;
+    width: 100%;
+
+    // border: 1px solid red;
+
+    @include respond(tab-land) {
+      height: 100vh;
+    }
+
+    &__content {
+      height: 100%;
+      width: 100%;
+    }
+
+    &__container {
+      height: 100%;
+      width: 100vw;
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      &--leading {
+        padding: 4rem 0;
+        width: 90vw;
+        max-width: 32rem;
+        margin: 0 auto;
+
+        display: grid;
+        grid-template-rows: auto 1fr;
+        align-items: center;
+        justify-items: center;
+        row-gap: 1.4rem;
+
+        font-size: 2.4rem;
+        color: $color-main;
+
+        @include respond(tab-land) {
+          padding-top: 8rem;
+          font-size: 3rem;
+          margin-bottom: 4rem;
+        }
+      }
+
+      &--main {
+        width: 100vw;
+        height: 100%;
+        position: relative;
+        // border: 1px solid red;
+
+        overflow: hidden;
+
+        & .map {
+          width: 100vw;
+          height: 100%;
+          // border: 1px solid red;
+
+          & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        & .contact {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+
+          height: 35rem;
+          width: 80vw;
+          max-width: 32rem;
+
+          background-color: white;
+          border-radius: 0.6rem;
+
+          transform: translate(-50%, -50%);
+
+          @include respond(tab-land) {
+            transform: translate(50%, -50%);
+          }
+
+          &__content{
+            height: 100%;
+            width: 100%;
+          }
+
+          &__container{
+            height: 100%;
+            width: 100%;
+
+            padding: 2.4rem;
+
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            align-items: center;
+
+            &--leading{
+              color: $color-main;
+              font-size: 2.4rem;
+            }
+
+            &--main{
+              // height: 100%;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__signIn {
+    height: 100%;
+    width: 100%;
+
+    // border: 1px solid red;
+
+    &__content {
+      height: 100%;
+      width: 100%;
+    }
+
+    &__container {
+      height: 100%;
+      width: 100vw;
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      &--leading {
+        padding: 4rem 0;
+        width: 90vw;
+        max-width: 32rem;
+        margin: 0 auto;
+
+        display: grid;
+        grid-template-rows: auto 1fr;
+        align-items: center;
+        justify-items: center;
+        row-gap: 1.4rem;
+
+        font-size: 2.4rem;
+        color: $color-main;
+
+        @include respond(tab-land) {
+          padding-top: 8rem;
+          font-size: 3rem;
+          margin-bottom: 4rem;
+        }
+      }
+
+      &--main {
+        width: 100vw;
+        padding-bottom: 4rem;
+        // height: 100%;
+        position: relative;
+        // border: 1px solid red;
+
+        // overflow: hidden;
+
+        & .signInForm {
+          width: max-content;
+          // max-width: 90rem;
+          margin: 0 auto;
+          padding: 4rem;
+
+          background-color: white;
+          border-radius: 0.6rem;
+          box-shadow: 0.1rem 0.1rem 0.4rem
+            rgba($color: $color-main, $alpha: 0.4);
+        }
+      }
+    }
+  }
+  &__signUp {
+    height: 100%;
+    width: 100%;
+
+    // border: 1px solid red;
+
+    &__content {
+      height: 100%;
+      width: 100%;
+    }
+
+    &__container {
+      height: 100%;
+      width: 100vw;
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      &--leading {
+        padding: 4rem 0;
+        width: 90vw;
+        max-width: 32rem;
+        margin: 0 auto;
+
+        display: grid;
+        grid-template-rows: auto 1fr;
+        align-items: center;
+        justify-items: center;
+        row-gap: 1.4rem;
+
+        font-size: 2.4rem;
+        color: $color-main;
+
+        @include respond(tab-land) {
+          padding-top: 8rem;
+          font-size: 3rem;
+          margin-bottom: 4rem;
+        }
+      }
+
+      &--main {
+        width: 100vw;
+        padding-bottom: 4rem;
+        // height: 100%;
+        position: relative;
+        // border: 1px solid red;
+
+        // overflow: hidden;
+
+        & .signUpForm {
+          width: max-content;
+          margin: 0 auto;
+          padding: 4rem;
+
+          background-color: white;
+          border-radius: 0.6rem;
+          box-shadow: 0.1rem 0.1rem 0.4rem
+            rgba($color: $color-main, $alpha: 0.4);
+
+          display: flex;
+          flex-direction: column;
+          row-gap: 1.6rem;
+
+          @include respond(tab-land){
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            column-gap: 2.4rem;
+          }
+        }
+      }
+    }
+  }
 }

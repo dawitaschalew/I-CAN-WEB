@@ -1,0 +1,93 @@
+.header {
+  user-select: none;
+  &__home {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    height: 6.4rem;
+    width: 100%;
+
+    @include respond(tab-land) {
+      height: 8rem;
+    }
+
+    background-color: white;
+    box-shadow: 0.2rem 0.2rem 1rem rgba($color: $color-main, $alpha: 0.4);
+
+    &__content {
+      height: 100%;
+      width: 100%;
+    }
+
+    &__container {
+      height: 100%;
+      width: 90%;
+
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+
+      &--leading {
+        height: 100%;
+        width: 100%;
+
+        cursor: pointer;
+
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+
+        column-gap: 1.2rem;
+
+        @include respond(tab-land){
+          row-gap: 0;
+        }
+
+        & > *:first-child{
+          @include respond(tab-land){
+            display: none;
+          }
+        }
+      }
+      &--main {
+      }
+      &--actions {
+        height: 100%;
+        width: 100%;
+
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+        column-gap: 2.4rem;
+
+        font-size: 1.4rem;
+
+        & > *:not(:last-child){
+          display: none;
+        }
+
+        @include respond(tab-land){
+          & > *:not(:last-child){
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}
+
+.logo {
+  height: 3.2rem;
+
+  @include respond(tab-land) {
+    height: 3.2rem;
+  }
+
+  & img {
+    height: 100%;
+    object-fit: contain;
+  }
+}

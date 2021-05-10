@@ -1,0 +1,108 @@
+.button {
+  user-select: none;
+  cursor: pointer;
+
+  position: relative;
+
+  overflow: hidden;
+
+  //   width: max-content;
+
+  padding: 0 1.4rem;
+
+  font-weight: 400;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 0.4rem;
+
+  &:hover {
+    &.primary {
+      background-color: black;
+    }
+    &.secondary {
+      background-color: white;
+    }
+    &.main {
+      background-color: darken($color: $color-main, $amount: 8%);
+    }
+    &.success {
+      background-color: green;
+    }
+    &.danger {
+      background-color: red;
+    }
+    &.none {
+      background-color: transparent;
+    }
+  }
+
+  &.small {
+    height: 3rem;
+    font-size: 1rem;
+  }
+  &.medium {
+    height: 3.8rem;
+    font-size: 1.4rem;
+  }
+  &.large {
+    height: 4.8rem;
+    font-size: 1.6rem;
+  }
+
+  &.raised {
+    border: none;
+    box-shadow: 0.1rem 0.1rem 0.4rem rgba($color: #000000, $alpha: 0.4);
+  }
+  &.outline {
+    border: 1px solid white;
+    background-color: transparent !important;
+
+    &.primary {
+      border-color: black;
+    }
+    &.secondary {
+      border-color: white;
+    }
+    &.main {
+      border-color: $color-main;
+      color: $color-main;
+    }
+    &.success {
+      border-color: green;
+    }
+    &.danger {
+      border-color: red;
+    }
+    &.none {
+      border-color: transparent;
+    }
+  }
+  &.flat {
+    border: none;
+    box-shadow: none;
+    padding: 0 !important;
+  }
+
+  &.primary {
+    background-color: black;
+  }
+  &.secondary {
+    background-color: white;
+  }
+  &.main {
+    background-color: $color-main;
+    color: white;
+  }
+  &.success {
+    background-color: green;
+  }
+  &.danger {
+    background-color: red;
+  }
+  &.none {
+    background-color: transparent;
+  }
+}

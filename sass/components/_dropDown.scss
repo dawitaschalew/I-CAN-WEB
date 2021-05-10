@@ -1,0 +1,116 @@
+.drop-down {
+  pointer-events: none;
+
+  &__content {
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+  }
+  &__container {
+    // width: max-content;
+    position: relative;
+    pointer-events: none;
+    &--label {
+      width: 100%;
+      padding: 1.1rem 1rem;
+
+      &.outline {
+        border: 1px solid lightgray;
+      }
+      border-radius: 0.4rem;
+      display: flex;
+      align-items: center;
+      user-select: none;
+      cursor: pointer;
+      font-size: 1.4rem;
+      font-weight: 500;
+
+      pointer-events: auto;
+
+      position: relative;
+
+      & > p {
+        margin-right: 2rem;
+        pointer-events: none;
+      }
+
+      & > div {
+        position: absolute;
+        bottom: 50%;
+        right: 1rem;
+        pointer-events: none;
+
+        width: 0;
+        height: 0;
+        border-left: 0.5rem solid transparent;
+        border-right: 0.5rem solid transparent;
+        border-top: 8px solid rgba($color: #777, $alpha: 1);
+
+        transform: translateY(50%);
+      }
+    }
+    &--options {
+      // max-height: 32rem;
+      height: max-content;
+      // height: 100%;
+      width: 100%;
+      min-width: max-content;
+      display: none;
+      // padding: 0 .8rem;
+      pointer-events: auto;
+
+      overflow: scroll;
+
+      z-index: 200;
+
+      background-color: whitesmoke;
+
+      box-shadow: 0.1rem 0.1rem 0.4rem rgba($color: #000000, $alpha: 0.2);
+
+      // border: 1px solid red;
+
+      transition: all 1s ease-in-out;
+
+      border-radius: 0.2rem;
+
+      position: absolute;
+      top: 0%;
+      right: 0%;
+
+      list-style-type: none;
+
+      // transform: translateY(-50%);
+
+      & > *:not(:last-child) {
+        border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+      }
+
+      & li {
+        height: 4rem;
+        width: 100%;
+
+        color: black;
+
+        pointer-events: auto;
+
+        font-size: 1.2rem;
+        padding: 0 1.4rem;
+
+        // display: inline-block;
+
+        // border: 1px solid red;
+        cursor: pointer;
+        user-select: none;
+
+        display: flex;
+        align-items: center;
+        // justify-content: center;
+      }
+
+      &.active {
+        display: grid;
+        grid-auto-flow: row;
+      }
+    }
+  }
+}
