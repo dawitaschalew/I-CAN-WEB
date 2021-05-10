@@ -91,3 +91,12 @@
     object-fit: contain;
   }
 }
+
+.header-links{
+  cursor: pointer;
+  user-select: none;
+
+  &.active{
+    color: $color-main;
+  }
+}
