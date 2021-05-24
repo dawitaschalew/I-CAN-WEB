@@ -59,21 +59,28 @@
         grid-template-rows: auto auto;
         align-items: center;
         justify-content: center;
+        position: relative;
 
-        @include respond(tab-land){
-          grid-template-columns: 1fr auto;
+        @include respond(tab-land) {
+          grid-template-columns: auto auto;
+          align-items: center;
+          align-content: center;
         }
 
         & > *:first-child {
           height: 100%;
+          width: 90vw;
+          margin: 0 auto;
           display: flex;
           flex-direction: column-reverse;
           align-items: center;
           justify-content: center;
+          // backdrop-filter: blur(.4rem);
 
-          color: $color-main;
+          color: $color-primary-dark;
 
           @include respond(tab-land) {
+            position: absolute;
             width: 40vw;
             flex-direction: column;
             align-items: flex-start;
@@ -88,6 +95,8 @@
             font-size: 2.4rem;
             text-align: center;
 
+            text-shadow: 0.1rem 0.1rem 0.2rem white;
+
             @include respond(tab-land) {
               font-size: 3.4rem;
               text-align: start;
@@ -98,27 +107,26 @@
 
         & > *:last-child {
           // border: 1px solid red;
-          width: 80vw;
+          width: 100vw;
           margin: 0 auto;
           display: flex;
           align-content: center;
           justify-content: center;
           height: 30vh;
+          overflow: hidden;
 
-          & > div {
-            height: 30vh;
-            @include respond(tab-land) {
-              height: 50vh;
-            }
-
-            & img {
-              height: 100%;
-              object-fit: contain;
-            }
-          }
           @include respond(tab-land) {
             height: 50vh;
-            width: 50vw;
+          }
+
+          & img {
+            height: 100%;
+            object-fit: contain;
+          }
+
+          @include respond(tab-land) {
+            height: 65vh;
+            width: 100vw;
           }
         }
       }
@@ -129,13 +137,13 @@
           height: 4rem;
 
           @include respond(tab-land) {
-            height: 6.3rem;
+            height: 8rem;
           }
           width: 100%;
           & img {
             height: 100%;
             width: 100%;
-            object-fit: cover;
+            object-fit: fill;
           }
         }
       }
@@ -203,7 +211,7 @@
         justify-content: center;
 
         font-size: 1.8rem;
-        color: $color-main;
+        color: $color-primary-dark;
       }
     }
   }
@@ -296,12 +304,12 @@
             transform: translate(50%, -50%);
           }
 
-          &__content{
+          &__content {
             height: 100%;
             width: 100%;
           }
 
-          &__container{
+          &__container {
             height: 100%;
             width: 100%;
 
@@ -311,12 +319,12 @@
             grid-template-rows: auto 1fr auto;
             align-items: center;
 
-            &--leading{
+            &--leading {
               color: $color-main;
               font-size: 2.4rem;
             }
 
-            &--main{
+            &--main {
               // height: 100%;
               width: 100%;
             }
@@ -461,7 +469,7 @@
           flex-direction: column;
           row-gap: 1.6rem;
 
-          @include respond(tab-land){
+          @include respond(tab-land) {
             display: grid;
             grid-template-columns: repeat(3, auto);
             column-gap: 2.4rem;
