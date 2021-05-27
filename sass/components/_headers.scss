@@ -42,12 +42,12 @@
 
         column-gap: 1.2rem;
 
-        @include respond(tab-land){
+        @include respond(tab-land) {
           row-gap: 0;
         }
 
-        & > *:first-child{
-          @include respond(tab-land){
+        & > *:first-child {
+          @include respond(tab-land) {
             display: none;
           }
         }
@@ -65,12 +65,12 @@
 
         font-size: 1.4rem;
 
-        & > *:not(:last-child){
+        & > *:not(:last-child) {
           display: none;
         }
 
-        @include respond(tab-land){
-          & > *:not(:last-child){
+        @include respond(tab-land) {
+          & > *:not(:last-child) {
             display: flex;
           }
         }
@@ -92,11 +92,57 @@
   }
 }
 
-.header-links{
+.header-links {
   cursor: pointer;
   user-select: none;
 
-  &.active{
+  &.active {
     color: $color-main;
+  }
+}
+
+.profilePopup {
+  height: max-content;
+  width: 20rem;
+  padding: 2.4rem;
+
+  background-color: white;
+
+  box-shadow: 0.1rem 0.1rem 0.4rem rgba($color: $color-main, $alpha: 1);
+
+  position: fixed;
+  top: 6.4rem;
+  right: 1.2rem;
+
+  z-index: 300;
+
+  @include respond(tab-land) {
+    top: 8rem;
+  }
+
+  &__content {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__container {
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    align-items: center;
+
+    &--leading {
+    }
+    &--main {
+      height: 100%;
+      width: 100%;
+      display: grid;
+      grid-auto-flow: column;
+      column-gap: 1.2rem;
+    }
+    &--actions {
+    }
   }
 }
